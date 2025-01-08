@@ -1,16 +1,10 @@
 from rest_framework import serializers
-from .models import Post, Vote
+
+from .models import Post
+
 
 class PostSerializer(serializers.ModelSerializer):
-    poster = serializers.ReadOnlyField(source='poster.username')
-    poster_id = serializers.ReadOnlyField(source='poster.id')
-    
     class Meta:
         model = Post
-        fields = ['id','title','url','poster','poster_id','created']
-        
-
-class VoteSerializer(serializers.ModelSerializer):
-    class Metha:
-        model = Vote 
-        fields = ['id']
+        fields = ['id', 'title', 'url', 'poster', 'created_at']
+        #read_only_fields = ['poster']
