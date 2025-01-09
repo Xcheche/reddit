@@ -37,4 +37,6 @@ urlpatterns = [
     path('', include('posts.urls')),
     #Swagger
     path("swagger",schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-schema"),
+    # Login
+     path('api-auth/', include('rest_framework.urls')),
 ]
