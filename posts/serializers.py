@@ -10,3 +10,12 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ['id', 'title', 'url', 'poster', 'poster_id', 'created_at']
         #read_only_fields = ['poster']
+        
+        
+# Vote serializer
+
+
+class VoteSerializer(serializers.Serializer):
+    class Meta:
+        fields = ['id']
+        
